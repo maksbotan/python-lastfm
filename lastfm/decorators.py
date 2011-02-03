@@ -6,7 +6,15 @@ __version__ = "0.2"
 __license__ = "GNU Lesser General Public License"
 __package__ = "lastfm"
 
-from decorator import decorator
+from functools import update_wrapper
+
+def decorator(f):
+    def wrapper(f1):
+        def dec(*args, **kwargs):
+            f1(*args, **kwargs)
+        return update_wrapper(f1, dec)
+
+    return update_wrapper(wrapper, f)
 
 def top_property(list_property_name):
     """

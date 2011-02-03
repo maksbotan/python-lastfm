@@ -6,7 +6,7 @@ __license__ = "GNU Lesser General Public License"
 __package__ = "lastfm.util"
 
 from collections import defaultdict
-from decorator import decorator
+from lastfm.decorators import decorator
 from threading import Lock
 
 _lock = Lock()
