@@ -154,6 +154,14 @@ class Track(LastfmBase):
         params = self._default_params({'method': 'track.ban'})
         self._api._post_data(params)
 
+    def unlove(self):
+        params = self._default_params({'method': 'track.unlove'})
+        self._api._post_data(params)
+
+    def unban(self):
+        params = self._default_params({'method': 'track.unban'})
+        self._api._post_data(params)
+
     @staticmethod
     def get_info(api,
                 artist = None,
